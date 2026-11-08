@@ -1,24 +1,38 @@
 {
-  "name": "nhentaijs",
+  "name": "@krpkg/nhentaijs",
   "version": "1.0.0",
-  "description": "Lightweight client & SDK for nHentai supporting API v2 and v1 endpoints",
+  "description": "Lightweight client & SDK for nHentai API v2 with in-memory ZIP archiving",
   "license": "Apache-2.0",
-  "author": "",
+  "author": "krpkg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krpkg/nhentaijs.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsup",
-    "typecheck": "tsc --noEmit"
-  },
-  "devDependencies": {
-    "tsup": "^8.0.2",
-    "typescript": "^5.4.5"
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
     "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.6",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
   }
 }

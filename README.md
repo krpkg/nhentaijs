@@ -1,4 +1,4 @@
-# nhentaijs
+# @krpkg/nhentaijs
 
 Lightweight, universal TypeScript client and SDK for nHentai supporting API v2 with in-memory ZIP archiving and progress tracking.
 
@@ -6,37 +6,37 @@ Fully compatible with Node.js, Bun, modern browsers, React Native, and Expo.
 
 ## Features
 
-- URL & ID Parsing: Supports raw numeric gallery IDs, full URLs (`https://nhentai.net/g/123456/`), and paths (`/g/123456`).
-- API v2 Support: Fetches metadata, tags, image dimensions, cover thumbnails, and page listings.
-- Resilient Downloads: Concurrent image downloads with automatic multi-CDN rotation, exponential backoff, retry handling, and pacing delays.
-- In-Memory ZIP Generation: Automatically packages gallery pages into compressed ZIP archives using JSZip.
-- Universal Runtime: Uses standard `fetch` and typed ArrayBuffers without platform-specific binary dependencies.
-- Progress Reporting: Emits real-time progress callbacks for download stages (`downloading`, `compressing`, `done`).
+- **URL & ID Parsing**: Supports raw numeric gallery IDs, full URLs (`https://nhentai.net/g/123456/`), and paths (`/g/123456`).
+- **Official API v2 Support**: Fetches metadata, tags, image dimensions, cover thumbnails, and page listings.
+- **Resilient Downloads**: Concurrent image downloads with automatic multi-CDN rotation, exponential backoff, retry handling, and pacing delays.
+- **In-Memory ZIP Generation**: Automatically packages gallery pages into compressed ZIP archives using JSZip.
+- **Universal Runtime**: Uses standard `fetch` and typed ArrayBuffers without platform-specific binary dependencies.
+- **Progress Reporting**: Emits real-time progress callbacks for download stages (`downloading`, `compressing`, `done`).
 
 ## Installation
 
-Using krpkg CLI:
+Using npm:
 
 ```bash
-krpkg install nhentaijs
+npm install @krpkg/nhentaijs
 ```
 
 Using Bun:
 
 ```bash
-bun add github:krpkg/nhentaijs
+bun add @krpkg/nhentaijs
 ```
 
-Using npm:
+Using pnpm:
 
 ```bash
-npm install github:krpkg/nhentaijs
+pnpm add @krpkg/nhentaijs
 ```
 
 ## Quick Start
 
 ```typescript
-import { NHentaiClient } from 'nhentaijs';
+import { NHentaiClient } from '@krpkg/nhentaijs';
 
 const client = new NHentaiClient({
   // Optional configuration
@@ -44,7 +44,7 @@ const client = new NHentaiClient({
   // userAgent: 'custom-user-agent',
 });
 
-// 1. Fetch gallery details
+// 1. Fetch gallery details via API v2
 const gallery = await client.getGallery('https://nhentai.net/g/521265/');
 console.log('Title:', gallery.title.pretty);
 console.log('Total pages:', gallery.num_pages);

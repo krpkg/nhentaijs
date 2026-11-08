@@ -21,7 +21,7 @@ export class NHentaiClient {
       : ['https://t1.nhentai.net', 'https://t3.nhentai.net', 'https://t4.nhentai.net'];
     this.apiKey = options.apiKey;
     this.fetchFn = options.fetch || (typeof globalThis !== 'undefined' ? globalThis.fetch.bind(globalThis) : fetch);
-    this.userAgent = options.userAgent || 'nhentaijs/1.0.0 (https://github.com/user/nhentaijs)';
+    this.userAgent = options.userAgent || 'nhentaijs/1.0.0 (https://github.com/krpkg/nhentaijs)';
     this.cookie = options.cookie;
   }
 
